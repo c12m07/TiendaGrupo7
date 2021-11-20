@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="css/menu.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">Grupo 7</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <a href="#">
+            <i class='bx bx-cart-alt' ></i>
+              <span class="links_name">Productos</span>
+            </a>
+            <span class="tooltip">Productos</span>
+        </li>
+      <li>
+       <a href="clientes.html">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Clientes</span>
+       </a>
+       <span class="tooltip">Clientes</span>
+     </li>
+     <li>
+        <a href="#">
+          <i class='bx bx-folder' ></i>
+          <span class="links_name">Ventas</span>
+        </a>
+        <span class="tooltip">Ventas</span>
+      </li>
+     <li>
+        <a href="#">
+          <i class='bx bx-pie-chart-alt-2' ></i>
+          <span class="links_name">Reportes</span>
+        </a>
+        <span class="tooltip">Reportes</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Consolidación</span>
+        </a>
+         <span class="tooltip">Consolidación</span>
+      </li>
+     <li class="profile">
+         <div class="profile-details">
+           <!--<img src="profile.jpg" alt="profileImg">-->
+           <div class="name_job">
+             <div class="name">Administrador</div>
+             <div class="job">Cerrar Sesión</div>
+           </div>
+         </div>
+         <a href="index.html">
+         <i class='bx bx-log-out' id="log_out" ></i>
+        </a>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      <div class="text">Tienda Generica</div>
+      <div class="producto">
+        <form name="frmSubirCSV" id="frmSubirCSV" method="post" enctype="multipart/form-data">
+					<p><img src="images/file.png" alt="" class="imagen"></p>
+					<h2>Subir archivo CSV</h2>
+					<p><input type="file" name="archivo_csv" id="archivo_csv"></p>
+					<p><input type="submit" class="enviar_archivo separar_boton" value="Subir archivo"></p>
+
+					<div id="estado"></div>
+      </div>
+  </section>
+
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); 
+  });
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+   }
+  }
+  </script>
+</body>
+</html>
