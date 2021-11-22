@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsive Sidebar Menu  | CodingLab </title>-->
+    <link rel="stylesheet" href="css/menu.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+        <div class="logo_name">Grupo 7</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+            <a href="productos.html">
+            <i class='bx bx-cart-alt' ></i>
+              <span class="links_name">Productos</span>
+            </a>
+            <span class="tooltip">Productos</span>
+        </li>
+      <li>
+       <a href="clientes.html">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Clientes</span>
+       </a>
+       <span class="tooltip">Clientes</span>
+     </li>
+     <li>
+        <a href="#">
+          <i class='bx bx-folder' ></i>
+          <span class="links_name">Ventas</span>
+        </a>
+        <span class="tooltip">Ventas</span>
+      </li>
+     <li>
+        <a href="#">
+          <i class='bx bx-pie-chart-alt-2' ></i>
+          <span class="links_name">Reportes</span>
+        </a>
+        <span class="tooltip">Reportes</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Consolidación</span>
+        </a>
+         <span class="tooltip">Consolidación</span>
+      </li>
+     <li class="profile">
+         <div class="profile-details">
+           <!--<img src="profile.jpg" alt="profileImg">-->
+           <div class="name_job">
+             <div class="name">Administrador</div>
+             <div class="job">Cerrar Sesión</div>
+           </div>
+         </div>
+         <a href="index.html">
+         <i class='bx bx-log-out' id="log_out" ></i>
+        </a>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      <div class="text">Tienda Generica</div>
+      <div class="ventas">
+        <h3>Cedula</h3> <input type = "text" name = "cedula"> <input type = "submit" value = "Consultar" />
+        <h3>Cliente</h3> <input type = "text" name = "cliente">
+        <h3>Consec.</h3> <input type = "text" name = "consec">
+         
+         <div class="titulos">
+         <h3 id="cod" >Cod. Producto</h3> <h3 id="nomb">Nombre Producto</h3> <h3 id="unidad">Valor</h3> <h3 id="titulo2">Cant.</h3> <h3 id="vlr">Vlr. Total</h3>
+         </div>
+         
+         <div class="ventas1">
+         <input id="codigo" type = "text" name = "codigoP1"> <input type = "submit" value = "consultar1" />
+         <input id="nombre" type = "text" name = "nombreP1">
+         <input id="valor" type = "text" name = "vlr1">
+         <input id="cant" type = "text" name = "cant1">
+         <input id="vlrTotal" type = "text" name = "vlrTotal1">
+         </div>
+         
+         <div class="ventas2">
+         <input id="codigo" type = "text" name = "codigoP2"> <input type = "submit" value = "consultar2" />
+         <input id="nombre" type = "text" name = "nombreP2">
+         <input id="valor" type = "text" name = "vlr2">
+         <input id="cant" type = "text" name = "cant2">
+         <input id="vlrTotal" type = "text" name = "vlrTotal2">
+         </div>
+         
+         <div class="ventas3">
+         <input id="codigo" type = "text" name = "codigoP3"> <input type = "submit" value = "consultar3" />
+         <input id="nombre" type = "text" name = "nombreP3">
+         <input id="valor" type = "text" name = "vlr2">
+         <input id="cant" type = "text" name = "cant3">
+         <input id="vlrTotal" type = "text" name = "vlrTotal3">
+         </div>
+         </div>
+         <div class="totales">
+         <h3>Total Venta</h3> <input type = "text" name = "totalVenta">
+         <br />
+        <h3>Total IVA</h3> <input type = "text" name = "totaIVA">
+        <br />
+        <h3>Total con IVA.</h3> <input type = "text" name = "totalconIVA">
+         </div>
+             
+             <div class="botones-ventas">
+             <input type = "submit" value = "Confirmar" />
+             </div>
+  </section>
+
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();//calling the function(optional)
+  });
+
+  searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+    sidebar.classList.toggle("open");
+    menuBtnChange(); 
+  });
+  function menuBtnChange() {
+   if(sidebar.classList.contains("open")){
+     closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+   }else {
+     closeBtn.classList.replace("bx-menu-alt-right","bx-menu");
+   }
+  }
+  </script>
+</body>
+</html>
