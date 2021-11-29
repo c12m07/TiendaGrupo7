@@ -35,4 +35,18 @@ UserSchema.methods.isCorrectPassword = function(password,callback){
         }
     });
 }
+function ingreso(){
+
+    var u="admininicial";
+    var c="admin123456";
+  
+  
+    if(document.form.login.value==u && document.form.password.value==c){
+    alert ("Bienvenido a Tienda Generica");
+    window.location="menu.html";}
+    else{
+    alert ("Usuario o Contraseña Incorrectos");
+  
+  }
+  }
 module.exports = mongoose.model('user',UserSchema);
